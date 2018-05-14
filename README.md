@@ -36,7 +36,7 @@ You have access to these render props. More information on [render-props](https:
 
 It is important that you pass-through this `ref` to the DOM node you want to calculate the proximity of.
 
-Example:
+Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-ref))
 
 ```javascript
 <ProximityFeedback>
@@ -44,11 +44,11 @@ Example:
 </ProximityFeedback>
 ```
 
-### distance
+### distance ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-distance))
 
 The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `maxDistance` prop.
 
-Example:
+Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-distance))
 
 ```javascript
 <ProximityFeedback>
@@ -62,7 +62,7 @@ Example:
 
 A boolean value to represent if the cursor is `0 <= distance <= props.maxDistance`.
 
-Example:
+Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-is-nearby))
 
 ```javascript
 <ProximityFeedback>
@@ -79,7 +79,7 @@ is >= `props.maxDistance` the `proximity` value is `0`. The proximity is `1` if 
 "`ref`ed" component.
 It represents the value from `0%` proximity to `100%` proximity.
 
-Example:
+Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-proximity))
 
 ```javascript
 <ProximityFeedback>

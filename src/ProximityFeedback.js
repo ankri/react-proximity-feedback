@@ -165,7 +165,9 @@ class ProximityFeedback extends Component {
 
   componentDidMount() {
     if (!this.ref || !this.ref.current) {
-      console.error('Please provide a ref: URL');
+      console.error(
+        'Please provide a ref: https://github.com/ankri/react-proximity-feedback#ref'
+      );
     } else {
       window.addEventListener('mousemove', this.throttled);
     }
