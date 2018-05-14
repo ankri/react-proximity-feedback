@@ -45,7 +45,7 @@ const DemoCodrops = ({ number }) => (
           <form className="form" action="" method="">
             <div className="form__item">
               <label className="form__label" htmlFor="firstname">
-                First Name *
+                First Name *!
               </label>
               <Input
                 className="form__input"
