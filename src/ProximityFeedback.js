@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash.throttle';
 import { distancePoints, lineEq } from './MathUtils';
-import { getMousePosition } from './MouseUtils';
+import getMousePosition from './MouseUtils';
 
 /**
  * Based on Codrops article: Ideas for Proximity Feedback with Progressive Hover Effects
@@ -94,7 +94,16 @@ class ProximityFeedback extends Component {
      * The time in milliseconds the proximity will be calculated. The lower the number the higher
      * is the frequency the proximity will be calculated. Defaults to 250.
      */
-    throttleInMs: PropTypes.number
+    throttleInMs: PropTypes.number,
+
+    /**
+     * Render props function. Available render props
+     * - ref
+     * - distance
+     * - isNearby
+     * - proximity
+     */
+    children: PropTypes.func
   };
 
   static defaultProps = {
@@ -165,6 +174,7 @@ class ProximityFeedback extends Component {
 
   componentDidMount() {
     if (!this.ref || !this.ref.current) {
+      /* eslint-disable-next-line */
       console.error(
         'Please provide a DOM node with a ref: https://github.com/ankri/react-proximity-feedback#ref'
       );

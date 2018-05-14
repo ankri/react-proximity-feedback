@@ -47,6 +47,7 @@ const DemoContainer = ({
 );
 
 DemoContainer.propTypes = {
+  number: PropTypes.number.isRequired,
   heading: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string,

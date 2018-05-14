@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DemoContainer from './DemoContainer';
 import ProximityFeedback from '../../../src/ProximityFeedback';
 
@@ -7,11 +8,15 @@ export default class DemoThreshold extends Component {
     threshold: 100
   };
 
+  static propTypes = {
+    number: PropTypes.number.isRequired
+  };
+
   changeThreshold = event => {
     try {
       const threshold = parseInt(event.target.value, 10);
       this.setState({
-        threshold: Math.abs(event.target.value) || 0
+        threshold: Math.abs(threshold) || 0
       });
     } catch (e) {
       this.setState({
@@ -26,7 +31,7 @@ export default class DemoThreshold extends Component {
         number={this.props.number}
         heading="Demo 5: props threshold"
         name="demo-props-threshold"
-        description="Change threshold. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsthreshold.js&quot; target=&quot;_blank&quot;>GitHub</a>"
+        description="Change threshold. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsthreshold.js&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>GitHub</a>"
       >
         <div>
           <div style={{ marginBottom: 10 }}>

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import DemoContainer from './DemoContainer';
 import ProximityFeedback from '../../../src/ProximityFeedback';
 
 class Input extends Component {
   input = null;
+
+  static propTypes = {
+    proximity: PropTypes.number.isRequired
+  };
 
   render() {
     const { proximity, ...props } = this.props;
@@ -27,14 +32,18 @@ class Input extends Component {
   }
 }
 
-export default class Demo6 extends Component {
+export default class DemoForm extends Component {
+  static propTypes = {
+    number: PropTypes.number.isRequired
+  };
+
   render() {
     return (
       <DemoContainer
         number={this.props.number}
         heading="form"
         name="demo-form"
-        description="A &quot;real-life&quot; example. Display an outline on the required inputs when they are invalid. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoForm.js&quot; target=&quot;_blank&quot;>GitHub</a>"
+        description="A &quot;real-life&quot; example. Display an outline on the required inputs when they are invalid. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoForm.js&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>GitHub</a>"
       >
         <div>
           <ProximityFeedback>

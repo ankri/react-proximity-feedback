@@ -3,10 +3,10 @@
  *
  * @see https://github.com/codrops/ProximityFeedback/blob/master/js/nearby.js#L15
  *
- * @param {*} x1 x coordinate of point 1
- * @param {*} y1 y coordinate of point 1
- * @param {*} x2 x coordinate of point 2
- * @param {*} y2 y coordinate of point 2
+ * @param {Integer} x1 x coordinate of point 1
+ * @param {Integer} y1 y coordinate of point 1
+ * @param {Integer} x2 x coordinate of point 2
+ * @param {Integer} y2 y coordinate of point 2
  */
 export function distancePoints(x1, y1, x2, y2) {
   return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
@@ -18,8 +18,8 @@ export function distancePoints(x1, y1, x2, y2) {
  * (This solution is not without its flaws, but works for this use case)
  * @see https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/round
  *
- * @param {*} number The number to round
- * @param {*} precision The number of max decimal places
+ * @param {Float} number The number to round
+ * @param {Integer} precision The number of max decimal places
  */
 function precisionRound(number, precision) {
   const factor = Math.pow(10, precision);

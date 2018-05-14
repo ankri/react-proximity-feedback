@@ -1,0 +1,13 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "esnext"
+  ],
+  "rules": {
+    "no-invalid-this": "off"
+  }
+}
