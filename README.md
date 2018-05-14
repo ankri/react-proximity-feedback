@@ -10,6 +10,14 @@ A small render prop component to provide proximity feedback of the mouse cursor 
 
 [Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-form)
 
+## Installation
+
+Using npm
+
+```
+npm install --save react-proximity-feedback
+```
+
 ## Usage
 
 You want to calculate the distance between the mouse cursor and a `button`. Wrap the button inside the `<ProximityFeedback>`

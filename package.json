@@ -1,6 +1,6 @@
 {
   "name": "react-proximity-feedback",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "react-proximity-feedback React render-prop component to get the proximity of the cursor to a DOM node.",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   },
-  "author": "Andreas Krings-Stern <react@ankri.de>",
+  "author": "Andy Krings-Stern <react@ankri.de>",
   "homepage": "https://ankri.github.com/react-proximity-feedback",
   "license": "MIT",
   "repository": "https://github.com/ankri/react-proximity-feedback",
