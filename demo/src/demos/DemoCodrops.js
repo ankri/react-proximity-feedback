@@ -33,7 +33,7 @@ export default function({ number }) {
       number={number}
       heading="codrops"
       name="demo-codrops"
-      description="Based on the form example from <a href=&quot;https://tympanus.net/Development/ProximityFeedback/&quot; target=&quot;_blank&quot;>codrops</a>"
+      description="Based on the form example from <a href=&quot;https://tympanus.net/Development/ProximityFeedback/&quot; target=&quot;_blank&quot;>codrops</a>. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoCodrops.js&quot; target=&quot;_blank&quot;>GitHub</a>."
     >
       <div>
         <ProximityFeedback maxDistance={75}>

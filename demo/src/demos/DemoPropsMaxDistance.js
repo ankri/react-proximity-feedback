@@ -26,7 +26,7 @@ export default class Demo5 extends Component {
         number={this.props.number}
         heading="Demo 5: props maxDistance"
         name="demo-props-max-distance"
-        description="Change maxDistance. Code see <a href=&quot;&quot; target=&quot;_blank&quot;>GitHub</a>"
+        description="Change maxDistance. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsMaxDistance.js&quot; target=&quot;_blank&quot;>GitHub</a>"
       >
         <div>
           <div style={{ marginBottom: 10 }}>
