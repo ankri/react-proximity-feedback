@@ -9,6 +9,7 @@ A small render prop component to provide proximity feedback of the mouse cursor 
 ## Demo
 
 [Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-form)
+
 [![Edit react-proximity-feedback sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rm0kxl626q)
 
 ## Installation
@@ -41,9 +42,9 @@ export default DemoComponent;
 
 Try it out on [CodeSandbox](https://codesandbox.io/s/rm0kxl626q)
 
-## Constraints
+## Constraints: No mobile support
 
-There is no mobile version available. Since you need access to the cursor this component does not make sense on touch only devices.
+Since you need access to the cursor this component does not make sense on touch only devices.
 
 ## Props
 
