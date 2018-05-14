@@ -14,7 +14,7 @@ class Input extends Component {
         this.input &&
         this.input.required &&
         (!this.input.value || this.input.value.length === 0) &&
-        `1px solid rgba(255,0,0, ${proximity}`
+        `1px solid rgba(255,0,0, ${proximity})`
     };
 
     return (

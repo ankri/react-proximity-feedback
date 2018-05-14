@@ -90,7 +90,7 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 ```javascript
 <ProximityFeedback>
   {({ ref, proximity }) => {
-    const outlineStyle = `3x solid rgba(255,0,0, ${proximity}`;
+    const outlineStyle = `3x solid rgba(255,0,0, ${proximity})`;
     return (
       <button ref={ref} style={outlineStyle}>
         Come closer
