@@ -9,12 +9,13 @@ const code = `<ProximityFeedback>
 </ProximityFeedback>
 `;
 
-export default function() {
+export default function({ number }) {
   return (
     <DemoContainer
-      heading="Demo 2: distance"
+      number={number}
+      heading="distance"
       name="demo-distance"
-      description="Second example. Display the distance between the cursor and the component."
+      description="Display the distance between the cursor and the component."
       code={code}
     >
       <div>

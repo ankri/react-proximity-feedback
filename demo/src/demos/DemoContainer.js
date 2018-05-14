@@ -13,7 +13,14 @@ const demoContainerStyle = {
   padding: 10
 };
 
-const DemoContainer = ({ heading, name, description, code, children }) => (
+const DemoContainer = ({
+  number,
+  heading,
+  name,
+  description,
+  code,
+  children
+}) => (
   <section
     style={{
       borderBottom: '1px solid #777',
@@ -22,7 +29,9 @@ const DemoContainer = ({ heading, name, description, code, children }) => (
     }}
   >
     <a name={name} />
-    <h2>{heading}</h2>
+    <h2>
+      Demo {number}: {heading}
+    </h2>
     {description &&
       description.length > 0 && (
         <p dangerouslySetInnerHTML={{ __html: description }} />

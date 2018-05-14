@@ -31,9 +31,10 @@ export default class Demo6 extends Component {
   render() {
     return (
       <DemoContainer
+        number={this.props.number}
         heading="Demo 6: Form"
         name="demo-form"
-        description="Sixth example. A &quot;real-life&quot; example. Display an outline on the required inputs when they are invalid. For code check the <a href=&quot;&quot; target=&quot;_blank&quot;>GitHub</a>"
+        description="A &quot;real-life&quot; example. Display an outline on the required inputs when they are invalid. For code check the <a href=&quot;&quot; target=&quot;_blank&quot;>GitHub</a>"
       >
         <div>
           <ProximityFeedback>

@@ -23,9 +23,10 @@ export default class Demo5 extends Component {
   render() {
     return (
       <DemoContainer
+        number={this.props.number}
         heading="Demo 5: props maxDistance"
         name="demo-props-max-distance"
-        description="Fifth example. Change maxDistance. Code see <a href=&quot;&quot; target=&quot;_blank&quot;>GitHub</a>"
+        description="Change maxDistance. Code see <a href=&quot;&quot; target=&quot;_blank&quot;>GitHub</a>"
       >
         <div>
           <div style={{ marginBottom: 10 }}>

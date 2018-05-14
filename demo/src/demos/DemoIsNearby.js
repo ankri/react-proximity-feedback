@@ -13,12 +13,13 @@ const code = `<ProximityFeedback>
 </ProximityFeedback>
 `;
 
-export default function() {
+export default function({ number }) {
   return (
     <DemoContainer
-      heading="Demo 3: isNearby"
+      number={number}
+      heading="isNearby"
       name="demo-is-near"
-      description="Third example. Use the boolean value of isNearby."
+      description="Use the boolean value of isNearby."
       code={code}
     >
       <div>

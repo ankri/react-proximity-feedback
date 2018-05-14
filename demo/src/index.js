@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import DemoRef from './demos/Demo1';
-import DemoDistance from './demos/Demo2';
-import DemoIsNearby from './demos/Demo3';
-import DemoProximity from './demos/Demo4';
-import DemoPropsMaxDistance from './demos/Demo5';
-import DemoForm from './demos/Demo6';
+import DemoCodrops from './demos/DemoCodrops';
+import DemoRef from './demos/DemoRef';
+import DemoDistance from './demos/DemoDistance';
+import DemoIsNearby from './demos/DemoIsNearby';
+import DemoProximity from './demos/DemoProximity';
+import DemoPropsMaxDistance from './demos/DemoPropsMaxDistance';
+import DemoForm from './demos/DemoForm';
 
 import ProximityFeedback from '../../src/ProximityFeedback';
+
+import './demo.css';
 
 const TouchWarning = () => (
   <div
@@ -32,12 +35,23 @@ class Demo extends Component {
       <div>
         <h1>react-proximity-feedback Demo</h1>
         {isTouchDevice && <TouchWarning />}
-        <DemoRef />
-        <DemoDistance />
-        <DemoIsNearby />
-        <DemoProximity />
-        <DemoPropsMaxDistance />
-        <DemoForm />
+        <section>
+          <h2>Documentation</h2>
+          <a
+            href="https://github.com/ankri/react-proximity-feedback"
+            target="_blank"
+          >
+            https://github.com/ankri/react-proximity-feedback
+          </a>
+        </section>
+
+        <DemoCodrops number={1} />
+        <DemoRef number={2} />
+        <DemoDistance number={3} />
+        <DemoIsNearby number={4} />
+        <DemoProximity number={5} />
+        <DemoPropsMaxDistance number={6} />
+        <DemoForm number={7} />
       </div>
     );
   }

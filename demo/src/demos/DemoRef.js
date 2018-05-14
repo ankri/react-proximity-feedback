@@ -7,12 +7,13 @@ const code = `<ProximityFeedback>
 </ProximityFeedback>
 `;
 
-export default function() {
+export default function({ number }) {
   return (
     <DemoContainer
-      heading="Demo 1: ref"
+      number={number}
+      heading="ref"
       name="demo-ref"
-      description="First demo. Does not do much except not logging an error."
+      description="Does not do much except not logging an error."
       code={code}
     >
       <div>
