@@ -37,6 +37,7 @@ const DemoProximity = ({ number }) => (
               style={{
                 outline: `3px solid rgba(255,0,0,${proximity})`
               }}
+              data-test="button-proximity"
             >
               Come closer
             </button>

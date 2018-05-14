@@ -1,5 +1,7 @@
 {
+  "plugins": ["cypress", "no-only-tests"],
   "env": {
+    "cypress/globals": true,
     "browser": true
   },
   "extends": [
@@ -8,6 +10,7 @@
     "esnext"
   ],
   "rules": {
-    "no-invalid-this": "off"
+    "no-invalid-this": "off",
+    "no-only-tests/no-only-tests": 2
   }
 }

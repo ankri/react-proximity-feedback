@@ -7,7 +7,7 @@ class Input extends Component {
   input = null;
 
   static propTypes = {
-    proximity: PropTypes.number.isRequired
+    proximity: PropTypes.number
   };
 
   render() {
@@ -52,7 +52,7 @@ const DemoCodrops = ({ number }) => (
                 type="text"
                 name="firstname"
                 id="firstname"
-                value="Jonathan"
+                defaultValue="Jonathan"
                 required
                 proximity={proximity}
               />
@@ -80,7 +80,7 @@ const DemoCodrops = ({ number }) => (
                 type="tel"
                 name="phone"
                 id="phone"
-                value="202-555-0108"
+                defaultValue="202-555-0108"
                 proximity={proximity}
               />
             </div>
@@ -93,7 +93,7 @@ const DemoCodrops = ({ number }) => (
                 type="text"
                 name="company"
                 id="company"
-                value="Powell Electronics Lda"
+                defaultValue="Powell Electronics Lda"
                 proximity={proximity}
               />
             </div>
@@ -106,7 +106,7 @@ const DemoCodrops = ({ number }) => (
                 type="text"
                 name="category"
                 id="category"
-                value="Electronics"
+                defaultValue="Electronics"
                 proximity={proximity}
               />
             </div>
@@ -119,7 +119,7 @@ const DemoCodrops = ({ number }) => (
                 type="text"
                 name="location"
                 id="location"
-                value="New York"
+                defaultValue="New York"
                 proximity={proximity}
               />
             </div>

@@ -119,3 +119,11 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
   }}
 </ProximityFeedback>
 ```
+
+### Testing
+
+Testing is done via [cypress](https://cypress.io). Run `npm run test` to start the cypress UI. Run `npm run test:headless` to run cypress in [headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run).
+
+---
+
+This project is using [nwb](https://github.com/insin/nwb/blob/master/docs/guides/ReactComponents.md)

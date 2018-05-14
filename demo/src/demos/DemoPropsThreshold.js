@@ -29,7 +29,7 @@ export default class DemoThreshold extends Component {
     return (
       <DemoContainer
         number={this.props.number}
-        heading="Demo 5: props threshold"
+        heading="props threshold"
         name="demo-props-threshold"
         description="Change threshold. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsthreshold.js&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>GitHub</a>"
       >
@@ -41,6 +41,7 @@ export default class DemoThreshold extends Component {
                 type="number"
                 onBlur={this.changeThreshold}
                 defaultValue={this.state.threshold}
+                data-test="input-props-threshold"
               />
             </label>
           </div>
@@ -54,7 +55,7 @@ export default class DemoThreshold extends Component {
                     padding: this.state.threshold
                   }}
                 >
-                  <button ref={ref}>
+                  <button ref={ref} data-test="button-props-threshold">
                     The mouse cursor is {isNearby ? 'nearby' : 'far away'}
                   </button>
                 </div>

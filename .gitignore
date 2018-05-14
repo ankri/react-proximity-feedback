@@ -5,3 +5,14 @@
 /node_modules
 /umd
 npm-debug.log*
+.eslintcache
+.env
+
+.DS_Store
+cypress.env.json
+cypress/videos
+cypress/screenshots
+
+*.iml
+.idea/
+.vscode/

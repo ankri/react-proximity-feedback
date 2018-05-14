@@ -7,7 +7,7 @@ class Input extends Component {
   input = null;
 
   static propTypes = {
-    proximity: PropTypes.number.isRequired
+    proximity: PropTypes.number
   };
 
   render() {

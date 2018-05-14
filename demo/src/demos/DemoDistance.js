@@ -21,7 +21,9 @@ const DemoDistance = ({ number }) => (
     <div>
       <ProximityFeedback>
         {({ ref, distance }) => (
-          <button ref={ref}>The mouse cursor is {distance}px away</button>
+          <button ref={ref} data-test="button-distance">
+            The mouse cursor is {distance}px away
+          </button>
         )}
       </ProximityFeedback>
     </div>

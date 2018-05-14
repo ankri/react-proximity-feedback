@@ -18,7 +18,7 @@ const DemoIsNearby = ({ number }) => (
   <DemoContainer
     number={number}
     heading="isNearby"
-    name="demo-is-near"
+    name="demo-is-nearby"
     description="Use the boolean value isNearby."
     code={code}
   >
@@ -33,7 +33,7 @@ const DemoIsNearby = ({ number }) => (
               backgroundColor: isNearby ? '#EFEFEF' : '#FFF'
             }}
           >
-            <button ref={ref}>
+            <button ref={ref} data-test="button-is-nearby">
               The mouse cursor is {isNearby ? 'nearby' : 'far away'}
             </button>
           </div>
