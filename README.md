@@ -2,6 +2,8 @@
 
 Based on Codrops article: [Ideas for Proximity Feedback with Progressive Hover Effects](https://tympanus.net/codrops/2018/05/02/ideas-for-proximity-feedback-with-progressive-hover-effects/)
 
+Codrops [GitHub repository](https://github.com/codrops/ProximityFeedback/)
+
 A small render prop component to provide proximity feedback of the mouse cursor and a DOM node (e.g. a button).
 
 ## Demo
