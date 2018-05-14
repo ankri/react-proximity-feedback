@@ -1,16 +1,95 @@
 # react-proximity-feedback
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+Based on Codrops article: [Ideas for Proximity Feedback with Progressive Hover Effects](https://tympanus.net/codrops/2018/05/02/ideas-for-proximity-feedback-with-progressive-hover-effects/)
 
-Describe react-proximity-feedback here.
+A small render prop component to provide proximity feedback of the mouse cursor and a DOM node (e.g. a button).
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+## Usage
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+You want to calculate the distance between the mouse cursor and a `button`. Wrap the button inside the `<ProximityFeedback>`
+component and provide the `ref` attribute.
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+```javascript
+<ProximityFeedback>
+  {({ ref, distance }) => (
+    <button ref={ref}>The mouse is {distance}px away</button>
+  )}
+</ProximityFeedback>
+```
+
+## Constraints
+
+There is no mobile version available. Since you need access to the cursor this component does not make sense on touch only devices.
+
+## Props
+
+You can pass two props to the `ProximityFeedback` component:
+
+* `maxDistance`: When the mouse is between 0 and this `maxDistance` in px the proximity feedback will be triggered and calculated.
+* `throttleInMs`: The time in milliseconds the proximity will be calculated. The lower the number the higher is the frequency the proximity will be calculated. Defaults to 250.
+
+## Render Props
+
+You have access to these render props. More information on [render-props](https://reactjs.org/docs/render-props.html)
+
+### ref
+
+It is important that you pass-through this `ref` to the DOM node you want to calculate the proximity of.
+
+Example:
+
+```javascript
+<ProximityFeedback>
+  {({ ref }) => <button ref={ref}>Hello World</button>}
+</ProximityFeedback>
+```
+
+### distance
+
+The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `maxDistance` prop.
+
+Example:
+
+```javascript
+<ProximityFeedback>
+  {({ ref, distance }) => (
+    <button ref={ref}>The mouse cursor is {distance}px away</button>
+  )}
+</ProximityFeedback>
+```
+
+### isNearby
+
+A boolean value to represent if the cursor is `0 <= distance <= props.maxDistance`.
+
+Example:
+
+```javascript
+<ProximityFeedback>
+  {({ ref, isNearby }) => (
+    <button ref={ref}>The cursor is {isNearby ? 'nearby' : 'far away'}</button>
+  )}
+</ProximityFeedback>
+```
+
+### proximity
+
+A float value from `0` to `1` rounded to two decimal places. When the distance of the mouse cursor
+is >= `props.maxDistance` the `proximity` value is `0`. The proximity is `1` if the cursor is right on top of the
+"`ref`ed" component.
+It represents the value from `0%` proximity to `100%` proximity.
+
+Example:
+
+```javascript
+<ProximityFeedback>
+  {({ ref, proximity }) => {
+    const outlineStyle = `3x solid rgba(255,0,0, ${proximity}`;
+    return (
+      <button ref={ref} style={outlineStyle}>
+        Come closer
+      </button>
+    );
+  }}
+</ProximityFeedback>
+```
