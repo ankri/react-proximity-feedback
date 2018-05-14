@@ -4,6 +4,10 @@ Based on Codrops article: [Ideas for Proximity Feedback with Progressive Hover E
 
 A small render prop component to provide proximity feedback of the mouse cursor and a DOM node (e.g. a button).
 
+## Demo
+
+[Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-form)
+
 ## Usage
 
 You want to calculate the distance between the mouse cursor and a `button`. Wrap the button inside the `<ProximityFeedback>`
