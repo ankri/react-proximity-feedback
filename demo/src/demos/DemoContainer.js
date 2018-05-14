@@ -21,8 +21,8 @@ const DemoContainer = ({ heading, name, description, code, children }) => (
       paddingTop: 20
     }}
   >
-    <h2>{heading}</h2>
     <a name={name} />
+    <h2>{heading}</h2>
     {description &&
       description.length > 0 && (
         <p dangerouslySetInnerHTML={{ __html: description }} />

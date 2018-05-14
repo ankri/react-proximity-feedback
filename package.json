@@ -27,9 +27,9 @@
     "react-dom": "^16.3.2"
   },
   "author": "Andreas Krings-Stern <react@ankri.de>",
-  "homepage": "",
+  "homepage": "https://ankri.github.com/react-proximity-feedback",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/ankri/react-proximity-feedback",
   "keywords": [
     "react-component",
     "codrops",
