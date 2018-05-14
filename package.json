@@ -1,6 +1,6 @@
 {
   "name": "react-proximity-feedback",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description":
     "React render-prop component to get the proximity of the cursor to a DOM node.",
   "main": "lib/index.js",
@@ -25,7 +25,11 @@
     "react": "16.x"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "prettier --write", "git add"],
+    "{demo/src/**/*, src/**/*}.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
     "*.{json,css,md}": ["prettier --write", "git add"]
   },
   "devDependencies": {
