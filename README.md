@@ -72,7 +72,7 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 
 ### distance
 
-The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `threshold` prop.
+The distance between the "`ref`ed" component and the mouse cursor in px.
 
 Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-distance))
 
