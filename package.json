@@ -1,6 +1,6 @@
 {
   "name": "react-proximity-feedback",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":
     "React render-prop component to get the proximity of the cursor to a DOM node.",
   "main": "lib/index.js",
