@@ -32,7 +32,7 @@ export default class Demo6 extends Component {
     return (
       <DemoContainer
         number={this.props.number}
-        heading="Demo 6: Form"
+        heading="form"
         name="demo-form"
         description="A &quot;real-life&quot; example. Display an outline on the required inputs when they are invalid. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoForm.js&quot; target=&quot;_blank&quot;>GitHub</a>"
       >

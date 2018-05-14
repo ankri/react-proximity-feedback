@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import DemoContainer from './DemoContainer';
 import ProximityFeedback from '../../../src/ProximityFeedback';
 
-export default class Demo5 extends Component {
+export default class DemoThreshold extends Component {
   state = {
-    maxDistance: 100
+    threshold: 100
   };
 
-  changeMaxDistance = event => {
+  changeThreshold = event => {
     try {
-      const maxDistance = parseInt(event.target.value, 10);
+      const threshold = parseInt(event.target.value, 10);
       this.setState({
-        maxDistance: Math.abs(event.target.value) || 0
+        threshold: Math.abs(event.target.value) || 0
       });
     } catch (e) {
       this.setState({
-        maxDistance: 0
+        threshold: 0
       });
     }
   };
@@ -24,29 +24,29 @@ export default class Demo5 extends Component {
     return (
       <DemoContainer
         number={this.props.number}
-        heading="Demo 5: props maxDistance"
-        name="demo-props-max-distance"
-        description="Change maxDistance. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsMaxDistance.js&quot; target=&quot;_blank&quot;>GitHub</a>"
+        heading="Demo 5: props threshold"
+        name="demo-props-threshold"
+        description="Change threshold. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoPropsthreshold.js&quot; target=&quot;_blank&quot;>GitHub</a>"
       >
         <div>
           <div style={{ marginBottom: 10 }}>
             <label>
-              Change the max distance
+              Change threshold{' '}
               <input
                 type="number"
-                onBlur={this.changeMaxDistance}
-                defaultValue={this.state.maxDistance}
+                onBlur={this.changeThreshold}
+                defaultValue={this.state.threshold}
               />
             </label>
           </div>
           <div>
-            <ProximityFeedback maxDistance={this.state.maxDistance}>
+            <ProximityFeedback threshold={this.state.threshold}>
               {({ ref, isNearby }) => (
                 <div
                   style={{
                     border: '1px solid red',
                     display: 'inline-block',
-                    padding: this.state.maxDistance
+                    padding: this.state.threshold
                   }}
                 >
                   <button ref={ref}>

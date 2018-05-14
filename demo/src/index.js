@@ -6,7 +6,7 @@ import DemoRef from './demos/DemoRef';
 import DemoDistance from './demos/DemoDistance';
 import DemoIsNearby from './demos/DemoIsNearby';
 import DemoProximity from './demos/DemoProximity';
-import DemoPropsMaxDistance from './demos/DemoPropsMaxDistance';
+import DemoPropsThreshold from './demos/DemoPropsThreshold';
 import DemoForm from './demos/DemoForm';
 
 import ProximityFeedback from '../../src/ProximityFeedback';
@@ -50,7 +50,7 @@ class Demo extends Component {
         <DemoDistance number={3} />
         <DemoIsNearby number={4} />
         <DemoProximity number={5} />
-        <DemoPropsMaxDistance number={6} />
+        <DemoPropsThreshold number={6} />
         <DemoForm number={7} />
       </div>
     );

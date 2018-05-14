@@ -24,8 +24,8 @@ import { getMousePosition } from './MouseUtils';
  *
  * ## Props
  * You can pass two props to the `ProximityFeedback` component:
- * - `maxDistance`: When the mouse is between 0 and this `maxDistance` in px the proximity feedback will be
- *                  triggered and calculated.
+ * - `threshold`: When the mouse is between 0 and this `threshold` in px the proximity feedback will be
+ *                triggered and calculated.
  * - `throttleInMs`: The time in milliseconds the proximity will be calculated. The lower the number the higher
  *                   is the frequency the proximity will be calculated. Defaults to 250.
  *
@@ -43,7 +43,7 @@ import { getMousePosition } from './MouseUtils';
  * ```
  *
  * ### distance
- * The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `maxDistance` prop.
+ * The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `threshold` prop.
  *
  * Example:
  * ```javascript
@@ -55,7 +55,7 @@ import { getMousePosition } from './MouseUtils';
  * ```
  *
  * ### isNearby
- * A boolean value to represent if the cursor is `0 <= distance <= props.maxDistance`.
+ * A boolean value to represent if the cursor is `0 <= distance <= props.threshold`.
  *
  * Example:
  * ```javascript
@@ -68,7 +68,7 @@ import { getMousePosition } from './MouseUtils';
  *
  * ### proximity
  * A float value from `0` to `1` rounded to two decimal places. When the distance of the mouse cursor
- * is >= `props.maxDistance` the `proximity` value is `0`. The proximity is `1` if the cursor is right on top of the
+ * is >= `props.threshold` the `proximity` value is `0`. The proximity is `1` if the cursor is right on top of the
  * "`ref`ed" component.
  * It represents the value from `0%` proximity to `100%` proximity.
  *
@@ -87,9 +87,9 @@ import { getMousePosition } from './MouseUtils';
 class ProximityFeedback extends Component {
   static propTypes = {
     /**
-     * When the mouse is between 0 and this `maxDistance` in px the proximity feedback will be triggered and calculated.
+     * When the mouse is between 0 and this `threshold` in px the proximity feedback will be triggered and calculated.
      */
-    maxDistance: PropTypes.number,
+    threshold: PropTypes.number,
     /**
      * The time in milliseconds the proximity will be calculated. The lower the number the higher
      * is the frequency the proximity will be calculated. Defaults to 250.
@@ -98,7 +98,7 @@ class ProximityFeedback extends Component {
   };
 
   static defaultProps = {
-    maxDistance: 35,
+    threshold: 35,
     throttleInMs: 250
   };
 
@@ -152,12 +152,12 @@ class ProximityFeedback extends Component {
           closestPoint.y
         )
       );
-      const proximity = 1 - lineEq(0, 1, 0, this.props.maxDistance, distance);
+      const proximity = 1 - lineEq(0, 1, 0, this.props.threshold, distance);
 
       this.setState({
         distance,
         proximity,
-        isNearby: distance <= this.props.maxDistance
+        isNearby: distance <= this.props.threshold
       });
     });
 
@@ -166,7 +166,7 @@ class ProximityFeedback extends Component {
   componentDidMount() {
     if (!this.ref || !this.ref.current) {
       console.error(
-        'Please provide a ref: https://github.com/ankri/react-proximity-feedback#ref'
+        'Please provide a DOM node with a ref: https://github.com/ankri/react-proximity-feedback#ref'
       );
     } else {
       window.addEventListener('mousemove', this.throttled);

@@ -9,6 +9,7 @@ A small render prop component to provide proximity feedback of the mouse cursor 
 ## Demo
 
 [Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-form)
+[![Edit react-proximity-feedback sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rm0kxl626q)
 
 ## Installation
 
@@ -24,12 +25,21 @@ You want to calculate the distance between the mouse cursor and a `button`. Wrap
 component and provide the `ref` attribute.
 
 ```javascript
-<ProximityFeedback>
-  {({ ref, distance }) => (
-    <button ref={ref}>The mouse is {distance}px away</button>
-  )}
-</ProximityFeedback>
+import React from 'react';
+import ProximityFeedback from 'react-proximity-feedback';
+
+const DemoComponent = () => (
+  <ProximityFeedback>
+    {({ ref, distance }) => (
+      <button ref={ref}>The cursor is {distance}px away</button>
+    )}
+  </ProximityFeedback>
+);
+
+export default DemoComponent;
 ```
+
+Try it out on [CodeSandbox](https://codesandbox.io/s/rm0kxl626q)
 
 ## Constraints
 
@@ -39,7 +49,8 @@ There is no mobile version available. Since you need access to the cursor this c
 
 You can pass two props to the `ProximityFeedback` component:
 
-* `maxDistance`: When the mouse is between 0 and this `maxDistance` in px the proximity feedback will be triggered and calculated.
+* `threshold`: When the mouse is between 0 and this `threshold` in px the proximity feedback will be triggered and calculated. ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-threshold))
+
 * `throttleInMs`: The time in milliseconds the proximity will be calculated. The lower the number the higher is the frequency the proximity will be calculated. Defaults to 250.
 
 ## Render Props
@@ -60,7 +71,7 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 
 ### distance
 
-The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `maxDistance` prop.
+The distance between the "`ref`ed" component and the mouse cursor in px. From 0 to the provided `threshold` prop.
 
 Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-distance))
 
@@ -74,7 +85,7 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 
 ### isNearby
 
-A boolean value to represent if the cursor is `0 <= distance <= props.maxDistance`.
+A boolean value to represent if the cursor is `0 <= distance <= props.threshold`.
 
 Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-is-nearby))
 
@@ -89,7 +100,7 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 ### proximity
 
 A float value from `0` to `1` rounded to two decimal places. When the distance of the mouse cursor
-is >= `props.maxDistance` the `proximity` value is `0`. The proximity is `1` if the cursor is right on top of the
+is >= `props.threshold` the `proximity` value is `0`. The proximity is `1` if the cursor is right on top of the
 "`ref`ed" component.
 It represents the value from `0%` proximity to `100%` proximity.
 

@@ -19,7 +19,7 @@ export default function({ number }) {
       number={number}
       heading="isNearby"
       name="demo-is-near"
-      description="Use the boolean value of isNearby."
+      description="Use the boolean value isNearby."
       code={code}
     >
       <div>

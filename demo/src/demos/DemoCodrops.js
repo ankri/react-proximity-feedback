@@ -36,7 +36,7 @@ export default function({ number }) {
       description="Based on the form example from <a href=&quot;https://tympanus.net/Development/ProximityFeedback/&quot; target=&quot;_blank&quot;>codrops</a>. View code on <a href=&quot;https://github.com/ankri/react-proximity-feedback/blob/master/demo/src/demos/DemoCodrops.js&quot; target=&quot;_blank&quot;>GitHub</a>."
     >
       <div>
-        <ProximityFeedback maxDistance={75}>
+        <ProximityFeedback threshold={75} throttleInMs={5}>
           {({ ref, proximity }) => (
             <form className="form" action="" method="">
               <div className="form__item">

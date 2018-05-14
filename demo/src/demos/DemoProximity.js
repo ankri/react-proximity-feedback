@@ -17,9 +17,9 @@ export default function({ number }) {
   return (
     <DemoContainer
       number={number}
-      heading="Demo 4: proximity"
+      heading="proximity"
       name="demo-proximity"
-      description="Use proximity percentage."
+      description="Use the distance as a proximity percentage: A value from 0 (far away) to 0.5 (halfway there) to 1 (very close)"
       code={code}
     >
       <div>
