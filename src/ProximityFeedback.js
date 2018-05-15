@@ -174,9 +174,8 @@ class ProximityFeedback extends Component {
 
   componentDidMount() {
     if (!this.ref || !this.ref.current) {
-      /* eslint-disable-next-line */
-      console.error(
-        'Please provide a DOM node with a ref: https://github.com/ankri/react-proximity-feedback#ref'
+      throw new Error(
+        'ProximityFeedback needs a DOM node with a ref. Instuctions: https://github.com/ankri/react-proximity-feedback#ref'
       );
     } else {
       window.addEventListener('mousemove', this.throttled);
