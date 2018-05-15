@@ -122,11 +122,6 @@ class ProximityFeedback extends Component {
     // see for vanilla js implementation:
     // https://github.com/codrops/ProximityFeedback/blob/master/js/nearby.js#L39
     requestAnimationFrame(() => {
-      // no ref provided. cancel
-      if (!this.ref || !this.ref.current) {
-        return;
-      }
-
       const mousePosition = getMousePosition(event);
       const documentScrolls = {
         left: document.body.scrollLeft + document.documentElement.scrollLeft,

@@ -7,22 +7,13 @@
  * @param {MouseEvent} mouseEvent The MouseEvent. Defaults to window.event
  */
 export default function getMousePosition(mouseEvent) {
-  let xPosition = 0;
-  let yPosition = 0;
-  const event = !mouseEvent ? window.event : mouseEvent;
-
-  if (event.pageX || event.pageY) {
-    xPosition = event.pageX;
-    yPosition = event.pageY;
-  } else if (event.clientX || event.clientY) {
-    xPosition =
-      event.clientX +
-      document.body.scrollLeft +
-      document.documentElement.scrollLeft;
-    yPosition =
-      event.clientY +
-      document.body.scrollTop +
-      document.documentElement.scrollTop;
-  }
+  const xPosition =
+    mouseEvent.clientX +
+    document.body.scrollLeft +
+    document.documentElement.scrollLeft;
+  const yPosition =
+    mouseEvent.clientY +
+    document.body.scrollTop +
+    document.documentElement.scrollTop;
   return { x: xPosition, y: yPosition };
 }

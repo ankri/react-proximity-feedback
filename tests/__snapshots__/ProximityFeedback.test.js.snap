@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProximityFeedback should throw error when no ref has been provided 1`] = `"ProximityFeedback needs a DOM node with a ref. Instuctions: https://github.com/ankri/react-proximity-feedback#ref"`;

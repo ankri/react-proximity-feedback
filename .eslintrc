@@ -1,8 +1,9 @@
 {
-  "plugins": ["cypress", "no-only-tests"],
+  "plugins": ["cypress", "jest", "no-only-tests"],
   "env": {
     "cypress/globals": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "extends": [
     "plugin:prettier/recommended",

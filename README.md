@@ -120,9 +120,21 @@ Example ([Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo
 </ProximityFeedback>
 ```
 
-### Testing
+## Testing
 
-Testing is done via [cypress](https://cypress.io). Run `npm run test` to start the cypress UI. Run `npm run test:headless` to run cypress in [headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run).
+Testing is done via [cypress](https://cypress.io) and [Jest](https://facebook.github.io/jest/en/) with [ReacTestUtils](https://reactjs.org/docs/test-utils.html).
+
+### Commands
+
+* `npm run test` Run the jest test in `tests/ProximityFeedback.test.js` once
+* `npm run test:coverage` Run the jest test in `tests/ProximityFeedback.test.js` once and create the coverage report
+* `npm run test:watch` Run the jest test in `tests/ProximityFeedback.test.js` in watch mode
+* `npm run test:cypress` Open the the cypress UI
+* `npm run test:cypress:headless` Run the cypress test in [headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run)
+
+## Build
+
+Run `npm run build` to run all tests, build the project and copy the demo files from `demo/dist/` to `docs/`.
 
 ---
 

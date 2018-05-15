@@ -6,11 +6,11 @@ describe('Test react-proximity-feedback', () => {
   it('testing render prop: distance (y coordinates)', () => {
     cy.scrollToSection('demo-distance');
 
-    cy.getButton('button-distance').then(({ xCenter, height }) => {
+    cy.getButton('button-distance').then(({ height }) => {
       [500, 200, 100, 50, 32, height].forEach(yCoordinate => {
         cy
           .get('@button-distance')
-          .trigger('mousemove', xCenter, yCoordinate, { force: true });
+          .trigger('mousemove', 20, yCoordinate, { force: true });
         cy.get('@button-distance').contains(`${yCoordinate - height}px`);
       });
     });
@@ -18,11 +18,11 @@ describe('Test react-proximity-feedback', () => {
 
   it('testing render prop: isNearby', () => {
     cy.scrollToSection('demo-is-nearby');
-    cy.getButton('button-is-nearby').then(({ xCenter }) => {
+    cy.getButton('button-is-nearby').then(() => {
       [200, 100, 40, 35, 15, 0].forEach(({ yCoordinate }) => {
         cy
           .get('@button-is-nearby')
-          .trigger('mousemove', xCenter, yCoordinate, { force: true });
+          .trigger('mousemove', 20, yCoordinate, { force: true });
         cy
           .get('@button-is-nearby')
           .contains(yCoordinate <= 35 ? 'nearby' : 'far away');
@@ -59,10 +59,10 @@ describe('Test react-proximity-feedback', () => {
 
   it('testing prop threshold', () => {
     cy.scrollToSection('demo-props-threshold');
-    cy.getButton('button-props-threshold').then(({ xCenter }) => {
+    cy.getButton('button-props-threshold').then(() => {
       cy
         .get('@button-props-threshold')
-        .trigger('mousemove', xCenter, 100, { force: true })
+        .trigger('mousemove', 20, 100, { force: true })
         .contains('nearby');
     });
     cy
@@ -70,14 +70,14 @@ describe('Test react-proximity-feedback', () => {
       .clear()
       .type(10)
       .blur();
-    cy.getButton('button-props-threshold').then(({ xCenter }) => {
+    cy.getButton('button-props-threshold').then(() => {
       cy
         .get('@button-props-threshold')
-        .trigger('mousemove', xCenter, 100, { force: true })
+        .trigger('mousemove', 20, 100, { force: true })
         .contains('far away');
       cy
         .get('@button-props-threshold')
-        .trigger('mousemove', xCenter, 5, { force: true })
+        .trigger('mousemove', 20, 5, { force: true })
         .contains('nearby');
     });
   });
