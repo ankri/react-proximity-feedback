@@ -12,12 +12,18 @@
 
 ## Running Tests
 
-* `npm test` will start the cypress UI.
+* `npm run test` Run the jest test in `tests/ProximityFeedback.test.js` once
 
-* `npm run test:headless` will run cypress in [headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run).
+* `npm run test:coverage` Run the jest test in `tests/ProximityFeedback.test.js` once and create the coverage report
+
+* `npm run test:watch` Run the jest test in `tests/ProximityFeedback.test.js` in watch mode
+
+* `npm run test:cypress` Open the the cypress UI
+
+* `npm run test:cypress:headless` Run the cypress test in [headless mode](https://docs.cypress.io/guides/guides/command-line.html#cypress-run)
 
 ## Building
 
-* `npm run build` will build the component for publishing to npm and also bundle the demo app.
+* `npm run build` will build the component for publishing to npm and also bundle the demo app and create the docs folder
 
 * `npm run clean` will delete built resources.
