@@ -16,3 +16,13 @@ cypress/screenshots
 *.iml
 .idea/
 .vscode/
+
+.cache
+.rts2_cache_cjs
+.rts2_cache_esm
+.rts2_cache_umd
+dist
+
+demo/node_modules
+demo/dist
+demo/.cache

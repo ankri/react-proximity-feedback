@@ -1,6 +1,0 @@
-{
-  "roots": ["<rootDir>/tests"],
-  "transform": {
-    "^.+\\.js$": "<rootDir>/jest.transform.js"
-  }
-}
