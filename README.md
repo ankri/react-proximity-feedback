@@ -10,7 +10,7 @@ A small render prop component to provide proximity feedback of the mouse cursor 
 
 [Demo](https://ankri.github.io/react-proximity-feedback/index.html#demo-form)
 
-[![Edit react-proximity-feedback sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/rm0kxl626q)
+[![Edit react-proximity-feedback sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-proximity-feedback-sandbox-puvj9?fontsize=14)
 
 ## Version 2.0.0
 
