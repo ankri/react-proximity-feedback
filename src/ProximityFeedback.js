@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import throttle from 'lodash.throttle';
+import throttle from 'lodash/throttle';
 import { distancePoints, lineEq } from './MathUtils';
 import getMousePosition from './MouseUtils';
+import isOnScreen from './isOnScreen';
 
 /**
  * Based on Codrops article: Ideas for Proximity Feedback with Progressive Hover Effects
@@ -156,7 +157,8 @@ class ProximityFeedback extends Component {
           closestPoint.y
         )
       );
-      const proximity = 1 - lineEq(0, 1, 0, this.props.threshold, distance);
+
+      const proximity = Math.round((1 - lineEq(0, 1, 0, this.props.threshold, distance)) * 100) / 100;
 
       this.setState({
         distance,
@@ -165,7 +167,16 @@ class ProximityFeedback extends Component {
       });
     });
 
+  onScroll = () => {
+    if (isOnScreen(this.ref)) {
+      window.addEventListener('mousemove', this.throttled);
+    } else {
+      window.removeEventListener('mousemove', this.throttled);
+    }
+  }
+    
   throttled = throttle(this.onMouseMove, this.props.throttleInMs);
+  throttledScroll = throttle(this.onScroll, this.props.throttleInMs);
 
   componentDidMount() {
     if (!this.ref || !this.ref.current) {
@@ -173,7 +184,12 @@ class ProximityFeedback extends Component {
         'ProximityFeedback needs a DOM node with a ref. Instuctions: https://github.com/ankri/react-proximity-feedback#ref'
       );
     } else {
-      window.addEventListener('mousemove', this.throttled);
+      //setTimeout is necessary in order to avoid an bug 
+      //in which isOnScreen allways returns false if a scrolled page has been loaded
+      setTimeout(() => {
+        if (isOnScreen(this.ref)) window.addEventListener('mousemove', this.throttled);
+      }, 0)
+      window.addEventListener('scroll', this.throttledScroll);
     }
   }
 
